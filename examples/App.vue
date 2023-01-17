@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <i-demo></i-demo>
-    <i-card
+    <ex-demo></ex-demo>
+    <ex-card
       imgSrc="https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81"
       v-drag
     >
@@ -13,7 +13,7 @@
           <div class="footer-right">￥582</div>
         </div>
       </template>
-    </i-card>
+    </ex-card>
     <button @click="showImg = true">预览图片</button>
     <image-preview
       v-model="showImg"

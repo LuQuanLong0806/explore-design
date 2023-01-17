@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "i-demo",
+  name: "ex-demo",
   components: {},
   props: {},
   data() {

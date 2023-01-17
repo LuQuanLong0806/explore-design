@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "i-card",
+  name: "ex-card",
   components: {},
   props: {
     width: {
