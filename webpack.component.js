@@ -32,6 +32,17 @@ module.exports = {
         library: 'mui', // 会把所打包文件的输出配置到这个字段下面
         libraryTarget: 'umd', // 告诉webpack 打包成 umd这种格式的文件 
     },
+
+    resolve: {
+        alias: {
+            "@": path.join(__dirname, "examples"), // 目录快捷方式配置
+            "components": path.join(__dirname, "components"), // 目录快捷方式配置
+            "directives": path.join(__dirname, "directives"), // 目录快捷方式配置
+            "util": path.join(__dirname, "util"), // 目录快捷方式配置
+            "lib": path.join(__dirname, "components/lib"), // 目录快捷方式配置
+        },
+        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],//以上文件引入可以省略后缀名
+    },
     // 注册插件
     plugins: [
         new VueLoaderPlugin()

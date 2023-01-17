@@ -1,9 +1,11 @@
-import ExportTableToExcel from "./export-excel/index.js";
+/* eslint-disable */
+import toExcel from "./export-excel/index.js"; // 引入JSON导出exce工具
 
 
-const exportTableToExcel = new ExportTableToExcel().exportTableToExcel;
+const utils = {
+    exportJsonToExcel: toExcel.exportJsonToExcel,
+    exportTableToExcel: toExcel.exportTableToExcel,
+}
 
 // 导出
-export default {
-    exportTableToExcel
-}
+export default utils

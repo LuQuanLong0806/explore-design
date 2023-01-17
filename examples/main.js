@@ -2,22 +2,24 @@ import Vue from 'vue'
 import App from './App.vue'
 
 
-// import Demo from '../components/lib/demo/src/index.vue';
-// Vue.component('ex-demo', Demo); // Demo.install = >  Vue.component();
+// 全局引入
+import 'components/css/index.scss'
+import exploreDesign from 'lib/index.js';
+Vue.use(exploreDesign);
 
-// import Demo from '../components/lib/demo/index.js';
-// Vue.use(Demo)
-// 按需引入
-// import './../components/css/card.scss';
-// import { Card } from './../components/lib/index.js';
+// 组件按需引入
+// import 'components/css/card.scss';
+// import { Card } from 'lib/index.js';
 // Vue.component('ex-card', Card)
 
-// 全局引入
-import './../components/css/index.scss'
-import { drag } from '../components/lib/index';
+// 自定义指令按需引入
+// import { drag } from 'lib/index';
+// Vue.directive('drag', drag)
 
-Vue.directive( 'drag', drag )
-// Vue.use(iUI)
+// 工具方法按需引入
+// import { exportJsonToExcel } from 'lib/index';
+// Vue.prototype.$exportJsonToExcel = exportJsonToExcel;
+
 
 Vue.config.productionTip = false
 

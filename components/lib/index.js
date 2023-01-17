@@ -4,10 +4,10 @@ import exDemo from "./demo/index.js";
 import exCard from "./card/index.js";
 import imgPreview from "./image-preview/index.js";
 // 引入自定义指令
-import directives from "./../../derectives/index.js"; // 拖拽指令
+import directives from "directives/index.js"; // 拖拽指令
 
 // 引入工具
-
+import utils from "util";
 
 const components = {
     exDemo,
@@ -25,6 +25,9 @@ const install = function (Vue) {
         Vue.directive(d, directives[d])
     });
     // 全局注册工具
+    Object.keys(utils).forEach(d => {
+        Vue.prototype['$' + d] = utils[d];
+    });
 };
 
 // ------------- 导出组件 -------------
@@ -37,7 +40,8 @@ export const imagePreview = imgPreview.imagePreview;
 export const drag = directives.drag; // 拖拽指令
 
 // 单独导出工具
-
+export const exportTableToExcel = utils.exportTableToExcel; // 表格导出excel
+export const exportJsonToExcel = utils.exportJsonToExcel; // json导出excel
 
 // 全局引入
 export default {

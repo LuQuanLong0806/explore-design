@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <!--   <ex-demo></ex-demo>
-   <ex-card
+    <ex-demo></ex-demo>
+    <ex-card
       imgSrc="https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81"
-      v-drag
     >
       <div class="summary">手把手教你搭建前端组件库,化身前端高手!</div>
       <template v-slot:footer>
@@ -14,32 +13,61 @@
         </div>
       </template>
     </ex-card>
-    <button @click="showImg = true">预览图片</button>
+
     <image-preview
       v-model="showImg"
       :img-list="[
         'https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81',
       ]"
-    ></image-preview> -->
+    ></image-preview>
     <div class="drag" v-drag></div>
+    <button @click="showImg = true">预览图片</button>
+    <br />
+    <button @click="test">JSON导出表格</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   components: {},
   data() {
     return {
       showImg: false,
-    };
+      tHeader: [
+        '供应商名称',
+        '供应商所属城市',
+        '是否关联企业',
+        '采购的主要产品',
+        '2022年下半年采购金额（万元）',
+        '2021年下半年采购金额（万元）',
+      ],
+      filterVal: [
+        'supplierName',
+        'city',
+        'affiliatedEnterprises',
+        'mainProducts',
+        'currentAmount',
+        'lastAmount',
+      ],
+    }
   },
   methods: {
     test() {
-      console.log("showImg");
+      let data = [
+        {
+          supplierName: 'supplierName',
+          city: 'city',
+          affiliatedEnterprises: 'affiliatedEnterprises',
+          mainProducts: 'mainProducts',
+          currentAmount: 'currentAmount',
+          lastAmount: 'lastAmount',
+        },
+      ]
+      this.$exportJsonToExcel(this.tHeader, this.filterVal, data)
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
