@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <ex-demo></ex-demo>
-    <ex-card
+    <!--   <ex-demo></ex-demo>
+   <ex-card
       imgSrc="https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81"
       v-drag
     >
@@ -20,7 +20,8 @@
       :img-list="[
         'https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81',
       ]"
-    ></image-preview>
+    ></image-preview> -->
+    <div class="drag" v-drag></div>
   </div>
 </template>
 
@@ -49,6 +50,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.drag {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
 }
 .summary {
   font-weight: 600;

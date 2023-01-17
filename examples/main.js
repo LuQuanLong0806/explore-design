@@ -14,8 +14,10 @@ import App from './App.vue'
 
 // 全局引入
 import './../components/css/index.scss'
-import iUI from '../components/lib/index'
-Vue.use(iUI)
+import { drag } from '../components/lib/index';
+
+Vue.directive( 'drag', drag )
+// Vue.use(iUI)
 
 Vue.config.productionTip = false
 

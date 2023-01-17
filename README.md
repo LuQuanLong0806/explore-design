@@ -13,8 +13,8 @@ npm i explore-design
 ```javascript
 // 全部引入
 import "explore-design/dist/css/index.css";
-import iUi from "explore-design";
-Vue.use(iUi);
+import exploreDesign from "explore-design";
+Vue.use(exploreDesign);
 
 // 按需引入
 import "explore-design/dist/css/card.css";
