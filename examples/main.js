@@ -1,0 +1,24 @@
+import Vue from 'vue'
+import App from './App.vue'
+
+
+// import Demo from '../components/lib/demo/src/index.vue';
+// Vue.component('i-demo', Demo); // Demo.install = >  Vue.component();
+
+// import Demo from '../components/lib/demo/index.js';
+// Vue.use(Demo)
+// 按需引入
+// import './../components/css/card.scss';
+// import { Card } from './../components/lib/index.js';
+// Vue.component('i-card', Card)
+
+// 全局引入
+import './../components/css/index.scss'
+import iUI from '../components/lib/index'
+Vue.use(iUI)
+
+Vue.config.productionTip = false
+
+new Vue({
+    render: h => h(App),
+}).$mount('#app')
