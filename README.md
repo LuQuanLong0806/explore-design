@@ -21,7 +21,7 @@ Vue.use(exploreDesign);
 // 按需引入组件
 // 引入全局css
 import "explore-design/dist/css/index.css";
-// 或者引入响应的组件部分的css文件
+// 或者引入相应的组件部分的css文件
 import "explore-design/dist/css/card.css";
 // 引入组件
 // 方法一 直接解构

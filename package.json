@@ -1,6 +1,6 @@
 {
     "name": "explore-design",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "自己的组件库",
     "main": "dist/lib/index.umd.js",
     "keywords": [
@@ -14,7 +14,9 @@
     },
     "files": [
         "dist",
-        "components"
+        "components",
+        "util",
+        "directives"
     ],
     "scripts": {
         "serve": "vue-cli-service serve --open",
