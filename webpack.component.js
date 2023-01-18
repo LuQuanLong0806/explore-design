@@ -1,8 +1,11 @@
 const path = require('path')
 // 要处理.vue结尾的文件 需要 vue-loader 模块
 const { VueLoaderPlugin } = require('vue-loader');
-
+// 压缩js代码
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// 启用 Gzip 压缩
+// const CompressionWebpackPlugin = require('compression-webpack-plugin');
+
 // VUE自动集成的插件
 const glob = require('glob')
 /** entry
@@ -72,7 +75,9 @@ module.exports = {
                     pure_funcs: ['console.log']//移除console
                 }
             }
-        })
+        }),
+
+        // new CompressionWebpackPlugin({})
     ],
     module: {
         // rules 告诉webpack 对于什么样的文件 使用什么的loader
