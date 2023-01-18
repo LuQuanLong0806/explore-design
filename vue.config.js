@@ -17,6 +17,9 @@ function resolve(dir) {
 }
 module.exports = {
     transpileDependencies: true,
+    productionSourceMap: false,
+    publicPath: './',
+    outputDir: 'explore-design',
     //  重新指定入口文件
     pages: {
         index: {
@@ -32,8 +35,14 @@ module.exports = {
             .set('components', resolve('./components'))
             .set('directives', resolve('./directives'))
             .set('util', resolve('./util'))
-            .set('lib', resolve('./components/lib'))
+        // .set('lib', resolve('./components/lib'))
         //注意 store 和 router 没必要配置
 
+    },
+    devServer: {
+        port: 8090,
+        host: 'localhost',
+        https: false,
+        open: true
     },
 }

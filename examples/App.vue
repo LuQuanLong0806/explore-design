@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <ex-demo></ex-demo>
-    <ex-card
+    <!-- <ex-demo></ex-demo> -->
+    <!-- <ex-card
       imgSrc="https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81"
     >
       <div class="summary">手把手教你搭建前端组件库,化身前端高手!</div>
@@ -12,7 +12,7 @@
           <div class="footer-right">￥582</div>
         </div>
       </template>
-    </ex-card>
+    </ex-card> -->
 
     <image-preview
       v-model="showImg"
@@ -20,7 +20,7 @@
         'https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81',
       ]"
     ></image-preview>
-    <div class="drag" v-drag></div>
+    <div class="drag" v-drag>拖动他试试</div>
     <button @click="showImg = true">预览图片</button>
     <br />
     <button @click="test">JSON导出表格</button>
