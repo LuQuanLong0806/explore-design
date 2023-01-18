@@ -6,7 +6,7 @@ import components from "components/index.js";
 import directives from "directives/index.js";
 
 // 引入工具
-import utils from "util";
+import utils from "util/index.js";
 
 const install = function (Vue) {
     if (install.installed) return; // 避免重复安装
