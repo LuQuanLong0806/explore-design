@@ -2,6 +2,7 @@ const path = require('path')
 // 要处理.vue结尾的文件 需要 vue-loader 模块
 const { VueLoaderPlugin } = require('vue-loader');
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // VUE自动集成的插件
 const glob = require('glob')
 /** entry
@@ -27,7 +28,8 @@ async function makeList(dirPath, list) {
         list[component] = `./${file}`;
     }
 }
-makeList('components/lib', entry);
+// 单独打包组件js文件 
+// makeList('components/lib', entry); 
 
 module.exports = {
     entry, // 入口文件
@@ -51,7 +53,26 @@ module.exports = {
     },
     // 注册插件
     plugins: [
-        new VueLoaderPlugin()
+        // 解析vue文件
+        new VueLoaderPlugin(),
+        // 压缩js代码
+        new UglifyJsPlugin({
+            include: /\.js$/,
+            parallel: true,
+            uglifyOptions: {
+                // 删除注释
+                output: {
+                    comments: false,
+                },
+                // 删除console debugger 删除警告
+                warnings: false,
+                compress: {
+                    drop_console: true,//console
+                    drop_debugger: true,
+                    pure_funcs: ['console.log']//移除console
+                }
+            }
+        })
     ],
     module: {
         // rules 告诉webpack 对于什么样的文件 使用什么的loader
@@ -65,5 +86,5 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
 }

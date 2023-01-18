@@ -21,8 +21,6 @@ Vue.use(exploreDesign);
 // 按需引入组件
 // 引入全局css
 import "explore-design/dist/css/index.css";
-// 或者引入相应的组件部分的css文件
-import "explore-design/dist/css/card.css";
 // 引入组件
 // 方法一 直接解构
 import { Card } from "explore-design";
@@ -45,5 +43,5 @@ import { exportJsonToExcel } from 'explore-design/dist/lib/util.umd.js';
 Vue.prototype.$exportJsonToExcel = exportJsonToExcel;
 this.$exportJsonToExcel();
 // 也可以直接调用
-exportJsonToExcel()
+exportJsonToExcel();
 ```
