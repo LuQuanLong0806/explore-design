@@ -17,7 +17,7 @@ import "explore-design/dist/css/index.css";
 import exploreDesign from "explore-design";
 Vue.use(exploreDesign);
 
-
+/*推荐按需引入部分方法使用第三方依赖会导致体积过大*/
 // 按需引入组件
 // 引入全局css
 import "explore-design/dist/css/index.css";
@@ -29,13 +29,11 @@ import { Card } from "explore-design/dist/lib/components.umd.js";
 // 注册组件
 Vue.component("ex-card", Card);
 
-
 // 自定义指令和工具暂不支持直接解构
 // 按需引入自定义指令
 import { drag } from 'explore-design/dist/lib/directives.umd.js';
 // 注册自定义指令
 Vue.directive('drag', drag)
-
 
 // 工具方法按需引入
 import { exportJsonToExcel } from 'explore-design/dist/lib/util.umd.js';
