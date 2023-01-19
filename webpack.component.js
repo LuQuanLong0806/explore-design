@@ -5,6 +5,8 @@ const { VueLoaderPlugin } = require('vue-loader');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // 启用 Gzip 压缩
 // const CompressionWebpackPlugin = require('compression-webpack-plugin');
+// 打包体积和依赖关系可视化插件
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 // VUE自动集成的插件
 const glob = require('glob')
@@ -76,7 +78,8 @@ module.exports = {
                 }
             }
         }),
-
+        // 可视化
+        new BundleAnalyzerPlugin({ analyzerPort: 8919 },)
         // new CompressionWebpackPlugin({})
     ],
     module: {
