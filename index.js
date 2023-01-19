@@ -28,6 +28,7 @@ const install = function (Vue) {
 // 组件模块单独导出
 export const Card = components.card.Card;
 export const Demo = components.demo.Demo;
+export const Pop = components.Pop.Pop;
 export const imagePreview = components["image-preview"].imagePreview;
 // // 自定义指令单独导出
 // export const drag = directives.drag; // 拖拽指令

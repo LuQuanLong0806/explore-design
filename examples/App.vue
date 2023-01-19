@@ -24,50 +24,100 @@
     <button @click="showImg = true">预览图片</button>
     <br />
     <button @click="test">JSON导出表格</button>
+    <button @click="openPop">打开弹窗</button>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
-  name: 'App',
+  name: "App",
   components: {},
   data() {
     return {
       showImg: false,
       tHeader: [
-        '供应商名称',
-        '供应商所属城市',
-        '是否关联企业',
-        '采购的主要产品',
-        '2022年下半年采购金额（万元）',
-        '2021年下半年采购金额（万元）',
+        "供应商名称",
+        "供应商所属城市",
+        "是否关联企业",
+        "采购的主要产品",
+        "2022年下半年采购金额（万元）",
+        "2021年下半年采购金额（万元）",
       ],
       filterVal: [
-        'supplierName',
-        'city',
-        'affiliatedEnterprises',
-        'mainProducts',
-        'currentAmount',
-        'lastAmount',
+        "supplierName",
+        "city",
+        "affiliatedEnterprises",
+        "mainProducts",
+        "currentAmount",
+        "lastAmount",
       ],
-    }
+    };
   },
   methods: {
     test() {
       let data = [
         {
-          supplierName: 'supplierName',
-          city: 'city',
-          affiliatedEnterprises: 'affiliatedEnterprises',
-          mainProducts: 'mainProducts',
-          currentAmount: 'currentAmount',
-          lastAmount: 'lastAmount',
+          supplierName: "supplierName",
+          city: "city",
+          affiliatedEnterprises: "affiliatedEnterprises",
+          mainProducts: "mainProducts",
+          currentAmount: "currentAmount",
+          lastAmount: "lastAmount",
         },
-      ]
-      this.$exportJsonToExcel(this.tHeader, this.filterVal, data)
+      ];
+      this.$exportJsonToExcel(this.tHeader, this.filterVal, data);
+    },
+    openPop() {
+      this.$pop("hi~");
+    },
+
+    digui() {
+      let arr1 = ["1", "1-1", "1-1-1"];
+      let label = "";
+      let list = [
+        {
+          name: "我是1",
+          value: "1",
+          children: [
+            {
+              name: "我是1-1",
+              value: "1-1",
+              children: [
+                {
+                  name: "我是1-1-1",
+                  value: "1-1-1",
+                  children: [],
+                },
+              ],
+            },
+          ],
+        },
+      ];
+      let templateData = JSON.parse(JSON.stringify(list));
+
+      let aa = (value, data) => {
+        data.forEach((d) => {
+          if (value === d.value) {
+            if (d.children && d.children.length) templateData = d.children;
+            label ? (label += " / " + d.name) : (label += d.name);
+            return;
+          }
+        });
+      };
+      arr1.forEach((d) => {
+        aa(d, templateData);
+      });
+
+      console.log("label~~~", label);
     },
   },
-}
+  mounted() {
+    setTimeout(() => {
+      this.digui();
+    }, 5000);
+  },
+};
 </script>
 
 <style lang="scss" scoped>
