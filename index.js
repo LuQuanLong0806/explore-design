@@ -30,6 +30,7 @@ export const Card = components.card.Card;
 export const Demo = components.demo.Demo;
 export const Pop = components.Pop.Pop;
 export const imagePreview = components["image-preview"].imagePreview;
+export const readExcel = components["read-excel"].ReadExcel;
 // // 自定义指令单独导出
 // export const drag = directives.drag; // 拖拽指令
 // // 单独导出工具

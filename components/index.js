@@ -17,3 +17,4 @@ export default components
 export const Card = components.card.Card;
 export const Demo = components.demo.Demo;
 export const imagePreview = components["image-preview"].imagePreview;
+export const ReadExcel = components["image-preview"].ReadExcel;

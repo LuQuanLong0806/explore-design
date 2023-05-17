@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { saveAs } from 'file-saver'
 // import * as XLSX from 'xlsx/xlsx.mjs';
-import { utils, write, SSF } from 'xlsx/xlsx.mjs'; // XLSX.
+// import { utils, write, SSF } from 'xlsx/xlsx.mjs'; // XLSX.
+import { utils, write, SSF } from 'xlsx'; // XLSX.
 
 function generateArray(table) {
   var out = [];
