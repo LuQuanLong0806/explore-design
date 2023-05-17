@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <ex-demo></ex-demo> -->
-    <!-- <ex-card
+    <ex-card
       imgSrc="https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81"
     >
       <div class="summary">手把手教你搭建前端组件库,化身前端高手!</div>
@@ -12,7 +12,7 @@
           <div class="footer-right">￥582</div>
         </div>
       </template>
-    </ex-card> -->
+    </ex-card>
 
     <image-preview
       v-model="showImg"
@@ -20,6 +20,7 @@
         'https://img1.baidu.com/it/u=407852637,3650486136&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1673802000&t=4cd7a3ca8cbec1c7a9f39469b37efc81',
       ]"
     ></image-preview>
+    <read-excel @on-result="getResult"></read-excel>
     <div class="drag" v-drag>拖动他试试</div>
     <button @click="showImg = true">预览图片</button>
     <br />
@@ -30,6 +31,7 @@
 
 <script>
 /* eslint-disable */
+
 export default {
   name: "App",
   components: {},
@@ -55,6 +57,7 @@ export default {
     };
   },
   methods: {
+    // JSON data 导出excel
     test() {
       let data = [
         {
@@ -68,10 +71,11 @@ export default {
       ];
       this.$exportJsonToExcel(this.tHeader, this.filterVal, data);
     },
+    // 打开POP
     openPop() {
       this.$pop("hi~");
     },
-
+    // 递归拼接
     digui() {
       let arr1 = ["1", "1-1", "1-1-1"];
       let label = "";
@@ -111,11 +115,16 @@ export default {
 
       console.log("label~~~", label);
     },
+    // 
+    getResult(data) {
+      let keys = Object.keys(data[0]);
+      this.$exportJsonToExcel(keys, keys, data)
+    },
   },
   mounted() {
-    setTimeout(() => {
-      this.digui();
-    }, 5000);
+    // setTimeout(() => {
+    //   this.digui();
+    // }, 5000);
   },
 };
 </script>

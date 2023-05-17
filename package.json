@@ -1,6 +1,6 @@
 {
     "name": "explore-design",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "自己的组件库",
     "main": "dist/lib/index.umd.js",
     "keywords": [
