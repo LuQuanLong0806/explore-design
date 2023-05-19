@@ -10,7 +10,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 export default {
   name: "ex-pop",
   props: {

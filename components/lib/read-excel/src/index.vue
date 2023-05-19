@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { read, utils } from "xlsx";
+import { read, utils } from "xlsx/xlsx.mjs";
 export default {
   name: "read-excel",
   components: {},
