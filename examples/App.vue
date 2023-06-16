@@ -26,6 +26,8 @@
     <br />
     <button @click="test">JSON导出表格</button>
     <button @click="openPop">打开弹窗</button>
+
+    <!-- <iframe src="http://172.16.2.252:8090/#/" frameborder="0"></iframe> -->
   </div>
 </template>
 

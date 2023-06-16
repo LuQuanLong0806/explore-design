@@ -6,6 +6,7 @@
         style="display: none"
         type="file"
         @change="uploadExcel"
+        accept=".xlx,.xlsx"
       />
       <slot>
         <button>上传excel</button>
