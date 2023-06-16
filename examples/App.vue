@@ -28,6 +28,9 @@
     <button @click="openPop">打开弹窗</button>
 
     <!-- <iframe src="http://172.16.2.252:8090/#/" frameborder="0"></iframe> -->
+
+    <component :is="test1"></component>
+
   </div>
 </template>
 
@@ -36,7 +39,7 @@
 
 export default {
   name: "App",
-  components: {},
+  //   components: {Card},
   data() {
     return {
       showImg: false,
@@ -56,9 +59,33 @@ export default {
         "currentAmount",
         "lastAmount",
       ],
+      test1: "",
+      test2: "",
     };
   },
   methods: {
+    // 动态import
+    importModel() {
+
+    const obj = {
+        Home: () => import("components/lib/card/src/index.vue")
+     }
+    //  const Home = () => import("components/lib/card/src/index.vue").then((res) => {
+    //     this.test1 = res.default;
+    //   });
+
+     obj.Home().then(res => {
+        this.test1 = res.default;
+
+     })
+      return;
+      import("components/lib/card/src/index.vue").then((res) => {
+        // console.log('importModel', res);
+        // console.log('this~',this);
+        // Vue.component('test-card', res);
+        // this.test1 = res;
+      });
+    },
     // JSON data 导出excel
     test() {
       let data = [
@@ -117,16 +144,16 @@ export default {
 
       console.log("label~~~", label);
     },
-    // 
+    //
     getResult(data) {
       let keys = Object.keys(data[0]);
-      this.$exportJsonToExcel(keys, keys, data)
+      this.$exportJsonToExcel(keys, keys, data);
     },
   },
   mounted() {
-    // setTimeout(() => {
-    //   this.digui();
-    // }, 5000);
+    setTimeout(() => {
+      this.importModel();
+    }, 0);
   },
 };
 </script>

@@ -22,6 +22,7 @@ import { exportJsonToExcel } from 'util/index.js';
 Vue.prototype.$exportJsonToExcel = exportJsonToExcel;
 
 Vue.config.productionTip = false
-new Vue({
+/* eslint-disable */
+ new Vue({
     render: h => h(App),
 }).$mount('#app')
